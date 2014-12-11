@@ -1,24 +1,19 @@
-[user]
-  name = Ben Alman
-  email = EMAIL
+[include]
+  path = ~/.gitconfig.identity
 [core]
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+  # Use custom `.gitignore` and `.gitattributes`
   excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes
+  filemode = false
+
+# force explicit remote declaration
+[push]
+  default = nothing
 [apply]
   whitespace = fix
 [alias]
-  br = branch
-  ci = commit
-  co = checkout
-  df = diff
-  g = grep -I
-  lg = log -p
-  pp = !"echo 'Pull'; git pull; echo 'Push'; git push"
-  rb = rbranch
-  rv = review
-  st = status
-  ksdiff = difftool -y -t Kaleidoscope
 [branch "master"]
   remote = origin
   merge = refs/heads/master
@@ -38,11 +33,15 @@
   changed = green
   untracked = cyan
 [merge]
+  # Include summaries of merged commits in newly created merge commit messages
   log = true
-[difftool "Kaleidoscope"]
-  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-[rerere]
-  enabled = 1
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+# URL Shortcuts
 [url "git@github.com:"]
   insteadOf = "gh:"
   pushInsteadOf = "github:"
