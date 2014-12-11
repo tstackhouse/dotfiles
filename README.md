@@ -22,6 +22,7 @@ I switched over to this configuration management setup after finally getting fed
 
 * Add git autocompletion (from the [git repo](https://github.com/git/git/tree/master/contrib/completion), maybe as a submodule?)
 * Import emacs configuration (aka the One True Editor)
+* Import Sublime Text configuration (aka the better GUI emacs) & a cask install
 * Import tmux configuration
 * Import irssi configuation
 * Import gitk configuration
@@ -59,11 +60,11 @@ I've isntalled this on OS x 10.8 without any issues, after having homebrew insta
 I haven't tried using this on an Ubuntu box yet, but I intend to soon.
 
 ## Inspiration
-<https://github.com/cowboy/dotfiles>  
-<https://github.com/tedkulp/dotfiles>  
+<https://github.com/cowboy/dotfiles>
+<https://github.com/tedkulp/dotfiles>
 (random stuff that I've had kicking around since college)
 
 ## License
-Copyright (c) 2014 Tim Stackhouse  
-Licensed under the MIT license.  
+Copyright (c) 2014 Tim Stackhouse
+Licensed under the MIT license.
 <http://benalman.com/about/license/>
