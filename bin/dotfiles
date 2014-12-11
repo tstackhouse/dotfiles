@@ -218,6 +218,10 @@ function link_do() {
   e_success "Linking ~/$1."
   ln -sf ${2#$HOME/} ~/
 }
+function link-private_header() { e_header "Linking private files into home directory"; }
+function link-private_do() {
+  link_do $1 $2
+}
 
 # Copy, link, init, etc.
 function do_stuff() {
@@ -315,9 +319,17 @@ mkdir -p "$DOTFILES/caches/init"
 backup_dir="$DOTFILES/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
 backup=
 
+# Where to store link-private files?
+link_private=~/Dropbox/link-private
+
+# Ensure link-private exists and is linked up
+[[ -d "$link_private" ]] || mkdir -p "$link_private"
+[[ -L "$DOTFILES/link-private" ]] || ln -sf "$link_private" "$DOTFILES/link-private"
+
 # Execute code for each file in these subdirectories.
 do_stuff "copy"
 do_stuff "link"
+do_stuff "link-private"
 do_stuff "init"
 
 # Alert if backups were made.

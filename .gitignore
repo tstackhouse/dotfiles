@@ -3,12 +3,7 @@
 /backups/
 
 # Top secret stuff!
-/link/.ssh/authorized_keys
-/link/.ssh/id_*
-/link/.ssh/known_hosts
-
-# Don't commit Vim plugins, vim-plug will install them.
-/link/.vim/plugged
+/link-private
 
 # Don't commit rbenv temp files.
 /link/.rbenv/shims/
