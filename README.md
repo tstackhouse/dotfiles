@@ -29,6 +29,7 @@ I switched over to this configuration management setup after finally getting fed
 * Test and improve setup of Ubuntu boxes
 * Remove additional unneeded/unused packages
 * Potentially auto-update on login
+* Import [utils](https://github.com/tstackhouse/utils) as a submodule and incorporate
 
 ## Init Scripts
 
@@ -56,13 +57,6 @@ I've isntalled this on OS x 10.8 without any issues, after having homebrew insta
 ### Ubuntu Notes
 
 I haven't tried using this on an Ubuntu box yet, but I intend to soon.
-
-## Scripts
-In addition to the aforementioned [dotfiles][dotfiles] script, there are a few other [bin scripts](bin). This includes [nave](https://github.com/isaacs/nave), which is a [git submodule](vendor).
-
-* [dotfiles][dotfiles] - (re)initialize dotfiles. It might ask for your password (for `sudo`).
-* [src](link/.bashrc#L8-18) - (re)source all files in `/source` directory
-* Look through the [bin](bin) subdirectory for a few more.
 
 ## Inspiration
 <https://github.com/cowboy/dotfiles>  
