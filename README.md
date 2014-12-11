@@ -8,7 +8,7 @@ I've been using bash for a long time, and had been managing all of my terminal c
 
 ## Enter `dotfiles`
 
-I switched over to this configuration management setup after finally getting fed up with my shared-history configuation in bash and deciding to jump ship for zsh.  Iince I was going to be starting over again anyway for my prompt config, I decided to start transitioning to a better management setup for all my dotfiles.
+I switched over to this configuration management setup after finally getting fed up with my shared-history configuation in bash (which I had never managed to get to work quite right) and deciding to jump ship for zsh.  Since I was going to be starting over again anyway for my shell config, I decided to start transitioning to a better management setup for all my dotfiles.
 
 ## Differences from Cowboy's version
 
