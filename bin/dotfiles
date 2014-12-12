@@ -219,6 +219,9 @@ function link_do() {
   ln -sf ${2#$HOME/} ~/
 }
 function link-private_header() { e_header "Linking private files into home directory"; }
+function link-private_test() {
+  [[ "$1" -ef "$2" ]] && echo "same file"
+}
 function link-private_do() {
   link_do $1 $2
 }
