@@ -33,4 +33,4 @@
 	url = git://github.com/rkh/rbenv-update.git
 [submodule "vendor/zsh-git-prompt"]
 	path = vendor/zsh-git-prompt
-	url = git@github.com:olivierverdier/zsh-git-prompt.git
+	url = git://github.com/olivierverdier/zsh-git-prompt.git
