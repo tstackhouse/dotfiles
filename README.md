@@ -29,6 +29,7 @@ I switched over to this configuration management setup after finally getting fed
 * Remove additional unneeded/unused packages
 * Potentially auto-update on login
 * Import [utils](https://github.com/tstackhouse/utils) as a submodule and incorporate
+* Add support to install dropbox automagically on ubuntu (Is there already a cask for mac?)
 
 ## Init Scripts
 

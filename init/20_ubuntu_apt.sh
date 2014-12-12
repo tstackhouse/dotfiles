@@ -32,6 +32,10 @@ EOF
   fi
 fi
 
+# add 3rd party apt repos
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+
 # Update APT.
 e_header "Updating APT"
 sudo apt-get -qq update
@@ -42,7 +46,9 @@ packages=(
   ansible
   build-essential
   cowsay
+  emacs
   git-core
+  google-chrome-stable
   htop
   id3tool
   libssl-dev
@@ -51,6 +57,7 @@ packages=(
   silversearcher-ag
   sl
   telnet
+  tmux
   tree
   zsh
 )
