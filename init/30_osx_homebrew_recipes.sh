@@ -9,6 +9,7 @@ recipes=(
   ansible
   bash
   cowsay
+  emacs
   git
   git-extras
   htop-osx
@@ -21,6 +22,7 @@ recipes=(
   sl
   ssh-copy-id
   the_silver_searcher
+  tmux
   tree
   zsh
 )
