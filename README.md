@@ -21,9 +21,7 @@ I switched over to this configuration management setup after finally getting fed
 ## TO DO
 
 * Add git autocompletion (from the [git repo](https://github.com/git/git/tree/master/contrib/completion), maybe as a submodule?)
-* Import emacs configuration (aka the One True Editor)
 * Import Sublime Text configuration (aka the better GUI emacs) & a cask install
-* Import tmux configuration
 * Import irssi configuation
 * Import gitk configuration
 * Convert to GPL License
