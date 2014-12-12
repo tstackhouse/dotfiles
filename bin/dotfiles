@@ -67,15 +67,15 @@ function path_remove() {
 function prompt_menu() {
   local exitcode prompt choices nums i n
   exitcode=0
-  if [[ "$2" ]]; then
+  if [[ ! -z "$2" ]]; then
     _prompt_menu_draws "$1"
     read -t $2 -n 1 -sp "To edit this list, press any key within $2 seconds. "
     exitcode=$?
     echo ""
   fi 1>&2
-  if [[ "$exitcode" == 0 ]]; then
+  if [[ $exitcode -eq 0 ]]; then
     prompt="Toggle options (Separate options with spaces, ENTER when done): "
-    while _prompt_menu_draws "$1" 1 && read -rp "$prompt" nums && [[ "$nums" ]]; do
+    while _prompt_menu_draws "$1" 1 && read -rp "$prompt" nums && [[ ! -z "$nums" ]]; do
       _prompt_menu_adds $nums
     done
   fi 1>&2
@@ -101,7 +101,7 @@ function _prompt_menu_draws() {
 
 function _prompt_menu_draw() {
   local modes=(error success)
-  if [[ "$3" ]]; then
+  if [[ ! -z "$3" ]]; then
     e_${modes[$1]} "$(printf "%2d) %s\n" $(($2+1)) "${menu_options[$2]}")"
   else
     e_${modes[$1]} "${menu_options[$2]}"
@@ -123,7 +123,7 @@ function _prompt_menu_add() {
       match=1; [[ "$state" == 0 ]] && keep=1
     fi
   done
-  [[ ! "$match" && "$state" == 1 || "$keep" ]] || return
+  [[ -z "$match" && "$state" == 1 || ! -z "$keep" ]] || return
   _prompt_menu_result=("${_prompt_menu_result[@]}" "${menu_options[i]}")
 }
 
@@ -134,7 +134,7 @@ function _prompt_menu_add() {
 function setdiff() {
   local debug skip a b
   if [[ "$1" == 1 ]]; then debug=1; shift; fi
-  if [[ "$1" ]]; then
+  if [[ ! -z "$1" ]]; then
     local setdiffA setdiffB setdiffC
     setdiffA=($1); setdiffB=($2)
   fi
@@ -144,12 +144,12 @@ function setdiff() {
     for b in "${setdiffB[@]}"; do
       [[ "$a" == "$b" ]] && skip=1 && break
     done
-    [[ "$skip" ]] || setdiffC=("${setdiffC[@]}" "$a")
+    [[ ! -z "$skip" ]] || setdiffC=("${setdiffC[@]}" "$a")
   done
-  [[ "$debug" ]] && for a in setdiffA setdiffB setdiffC; do
+  [[ ! -z "$debug" ]] && for a in setdiffA setdiffB setdiffC; do
     echo "$a ($(eval echo "\${#$a[*]}")) $(eval echo "\${$a[*]}")" 1>&2
   done
-  [[ "$1" ]] && echo "${setdiffC[@]}"
+  [[ ! -z "$1" ]] && echo "${setdiffC[@]}"
 }
 
 # If this file was being sourced, exit now.
@@ -179,7 +179,7 @@ function init_files() {
       for os in "${oses[@]}"; do
         [[ "$opt" =~ (^|[^a-z])$os($|[^a-z]) ]] && remove=1 && break
       done
-      [[ "$remove" ]] || menu_selects=("${menu_selects[@]}" "$opt")
+      [[ ! -z "$remove" ]] || menu_selects=("${menu_selects[@]}" "$opt")
     done
   fi
   prompt_menu "Run the following init scripts?" $prompt_delay
@@ -240,7 +240,7 @@ function do_stuff() {
     if [[ $(declare -f "$1_test") ]]; then
       # If _test function returns a string, skip file and print that message.
       skip="$("$1_test" "$file" "$dest")"
-      if [[ "$skip" ]]; then
+      if [[ ! -z "$skip" ]]; then
         e_error "Skipping ~/$base, $skip."
         continue
       fi
@@ -333,7 +333,7 @@ do_stuff "link-private"
 do_stuff "init"
 
 # Alert if backups were made.
-if [[ "$backup" ]]; then
+if [[ ! -z "$backup" ]]; then
   echo -e "\nBackups were moved to ~/${backup_dir#$HOME/}"
 fi
 
