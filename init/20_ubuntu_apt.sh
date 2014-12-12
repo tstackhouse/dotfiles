@@ -42,6 +42,7 @@ packages=(
   ansible
   build-essential
   cowsay
+  emacs
   git-core
   htop
   id3tool
@@ -51,6 +52,7 @@ packages=(
   silversearcher-ag
   sl
   telnet
+  tmux
   tree
   zsh
 )
