@@ -2,7 +2,7 @@
 alias e='emacs'
 alias emacs='emacs -nw'
 alias h='history 25'
-alias hgrep='history | grep'
+alias hgrep='history 10000 | grep'
 alias cpr='rsync -r --stats --progress'
 
 # os-specific aliases
