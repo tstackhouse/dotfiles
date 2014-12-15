@@ -1,8 +1,8 @@
 # helpful shortcut aliases
 alias e='emacs'
 alias emacs='emacs -nw'
-alias h='history 25'
-alias hgrep='history 10000 | grep'
+alias h='history'
+alias hgrep='history 1 | grep'
 alias cpr='rsync -r --stats --progress'
 
 # os-specific aliases
