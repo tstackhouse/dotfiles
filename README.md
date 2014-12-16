@@ -17,15 +17,14 @@ I switched over to this configuration management setup after finally getting fed
 * Added a 'link-private' function for private stuff like .ssh and GPG keys to be synced in a non-public fashion (e.g. Dropbox, Google Drive, rsync, etc.) (inspired by [Ted Kulp's take on Cowboy's setup](https://github.com/tedkulp/dotfiles))
 * Includes 'zsh-git-prompt' to provide relevant git status information in real time
 * By default, any shell will automatically spawn (or connect to an existing) tmux session
+* Install [Oh My Zsh](http://ohmyz.sh/) for it's array of plugins and (especially) git completion
 
 ## TO DO
 
-* Add git autocompletion (from the [git repo](https://github.com/git/git/tree/master/contrib/completion), maybe as a submodule?)
 * Import Sublime Text configuration (aka the better GUI emacs) & a cask install
 * Import irssi configuation
 * Import gitk configuration
 * Convert to GPL License
-* Test and improve setup of Ubuntu boxes
 * Remove additional unneeded/unused packages
 * Potentially auto-update on login
 * Import [utils](https://github.com/tstackhouse/utils) as a submodule and incorporate
@@ -56,7 +55,7 @@ I've isntalled this on OS x 10.8 without any issues, after having homebrew insta
 
 ### Ubuntu Notes
 
-I haven't tried using this on an Ubuntu box yet, but I intend to soon.
+I've set this up on a box running the latest Ubuntu (14.10 Utopic Unicorn) and made some appropriate tweaks to make things run smoothly there
 
 ## Inspiration
 <https://github.com/cowboy/dotfiles>
