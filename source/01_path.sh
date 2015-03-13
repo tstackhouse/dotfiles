@@ -24,3 +24,7 @@ fi
 
 export PATH="/usr/local/mysql/bin:/opt/local/bin:/usr/local/bin:$PATH"
 export php="/usr/local/php5/bin/php"
+
+if [[ -a "/usr/libexec/java_home" ]] ; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
