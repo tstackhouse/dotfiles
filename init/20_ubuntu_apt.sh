@@ -34,7 +34,7 @@ fi
 
 # add 3rd party apt repos
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
 
 # Update APT.
 e_header "Updating APT"
