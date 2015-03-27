@@ -37,3 +37,6 @@
 [submodule "vendor/oh-my-zsh"]
 	path = vendor/oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
+[submodule "vendor/evernote-mode"]
+	path = vendor/evernote-mode
+	url = git@github.com:pymander/evernote-mode.git
