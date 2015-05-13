@@ -4,6 +4,7 @@ alias emacs='emacs -nw'
 alias h='history'
 alias hgrep='history | grep'
 alias cpr='rsync -r --stats --progress'
+alias tmfr='tmuxifier'
 
 # os-specific aliases
 case `uname` in
