@@ -10,3 +10,6 @@ if [[ -z "$TMUX" ]]; then
       #exit
     fi
 fi
+
+# tmuxifier
+eval "$(tmuxifier init -)"

@@ -28,3 +28,6 @@ export php="/usr/local/php5/bin/php"
 if [[ -a "/usr/libexec/java_home" ]] ; then
     export JAVA_HOME=$(/usr/libexec/java_home)
 fi
+
+# add tmuxifier
+export PATH="$DOTFILES/vendor/tmuxifier/bin:$PATH"
