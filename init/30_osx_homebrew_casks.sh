@@ -27,6 +27,7 @@ casks=(
   dropbox
   fastscripts
   firefox
+  functionflip
   google-chrome
   gyazo
   hex-fiend
