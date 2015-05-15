@@ -12,4 +12,5 @@ if [[ -z "$TMUX" ]]; then
 fi
 
 # tmuxifier
+export TMUXIFIER_LAYOUT_PATH="$DOTFILES/conf/tmuxifier/layouts"
 eval "$(tmuxifier init -)"
