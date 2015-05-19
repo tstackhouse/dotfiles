@@ -10,3 +10,7 @@ if [[ -z "$TMUX" ]]; then
       #exit
     fi
 fi
+
+# tmuxifier
+export TMUXIFIER_LAYOUT_PATH="$DOTFILES/conf/tmuxifier/layouts"
+eval "$(tmuxifier init -)"
