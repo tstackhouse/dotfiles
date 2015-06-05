@@ -1,5 +1,5 @@
 # ssh-agent config
-SSH_ENV="$HOME/.ssh/environment"
+SSH_ENV="$HOME/.ssh-local/environment"
 
 function start_agent {
 	echo "Initialising new SSH agent..."
