@@ -17,3 +17,6 @@ case `uname` in
     ;;
 esac
 # /os aliases
+
+# disable aliases from oh-my-zsh plugins
+unalias gcp
