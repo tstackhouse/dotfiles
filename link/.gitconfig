@@ -58,3 +58,5 @@
   insteadOf = "heroku:"
 [fetch]
 	prune = true
+[diff]
+	algorithm = patience
