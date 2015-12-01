@@ -4,7 +4,7 @@
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
   # Use custom `.gitignore` and `.gitattributes`
-  excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes
   filemode = false
 
@@ -39,7 +39,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 	trustExitCode = true
 # URL Shortcuts
 [url "git@github.com:"]
@@ -60,3 +60,10 @@
 	prune = true
 [diff]
 	algorithm = patience
+[user]
+	name = Tim Stackhouse
+	email = tstackhouse@radius180.com
+[merge]
+	ff = no
+[branch]
+	autoSetupRebase = always

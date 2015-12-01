@@ -69,3 +69,5 @@ Desktop.ini
 
 # Private sublime configs
 sftp-config.json
+*.sublime-project
+*.sublime-workspace
