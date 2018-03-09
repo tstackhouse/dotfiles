@@ -1,6 +1,6 @@
 # Dotfiles
 
-My OSX / Ubuntu dotfiles.
+My OSX / Ubuntu / WSL dotfiles.
 
 ## About this project
 
@@ -21,7 +21,7 @@ I switched over to this configuration management setup after finally getting fed
 
 ## TO DO
 
-* Import Sublime Text configuration (aka the better GUI emacs) & a cask install
+* Import VSCode config & a cask install (gist-based config sync plugin is available)
 * Import irssi configuation
 * Import gitk configuration
 * Convert to GPL License
@@ -41,11 +41,16 @@ I switched over to this configuration management setup after finally getting fed
 * [Fonts](/cowboy/dotfiles/tree/master/conf/osx/fonts) via the [init/50_osx_fonts.sh](init/50_osx_fonts.sh) script
 
 ### Ubuntu
+
 * APT packages and git-extras via the [init/20_ubuntu_apt.sh](init/20_ubuntu_apt.sh) script
 
-### Both
-* Node.js, npm and nave via the [init/50_node.sh](init/50_node.sh) script
-* Ruby, gems and rbenv via the [init/50_ruby.sh](init/50_ruby.sh) script
+### WSL
+
+* APT packages and git-extras via the [init/20_wsl_apt.sh](init/20_wsl_apt.sh) script
+
+### All 3
+
+* Node.js and npm using nvm via the [init/50_node.sh](init/50_node.sh) script
 
 ## Installation
 

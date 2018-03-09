@@ -1,5 +1,3 @@
-# Load nave- and npm-related functions.
-source $DOTFILES/source/50_node.sh
+# download and install latest nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 
-# Install latest stable Node.js, set as default, install global npm modules.
-nave_install stable
