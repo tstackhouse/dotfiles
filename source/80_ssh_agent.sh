@@ -1,6 +1,6 @@
 # ssh-agent config
 SSH_ENV="$HOME/.ssh-local/environment"
-WEASEL_BIN="/mnt/c/Program\ Files/PuTTY/weasel-pageant"
+WEASEL_BIN=/mnt/c/Program\ Files/PuTTY/weasel-pageant
 
 function start_agent {
     echo "Initialising new SSH agent..."
