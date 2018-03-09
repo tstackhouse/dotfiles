@@ -328,6 +328,17 @@ backup=
 # Where to store link-private files?
 link_private=~/Dropbox/link-private
 
+# Use WSL path for link-private
+if [[ is_wsl ]]; then
+  # get's WSL path for windows home dir copied from https://superuser.com/a/1271227
+  win_userprofile="$(cmd.exe /c "<nul set /p=%UserProfile%" 2>/dev/null)"
+  win_userprofile_drive="${win_userprofile%%:*}:"
+  userprofile_mount="$(findmnt --noheadings --first-only --output TARGET "$win_userprofile_drive")"
+  win_userprofile_dir="${win_userprofile#*:}"
+  userprofile="${userprofile_mount}${win_userprofile_dir//\\//}"
+  link_private="${userprofile}/Dropbox/link-private"
+fi
+
 # Ensure link-private exists and is linked up
 [[ -d "$link_private" ]] || mkdir -p "$link_private"
 [[ -L "$DOTFILES/link-private" ]] || ln -sf "$link_private" "$DOTFILES/link-private"
