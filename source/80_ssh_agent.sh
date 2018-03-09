@@ -1,5 +1,6 @@
 # ssh-agent config
 SSH_ENV="$HOME/.ssh-local/environment"
+WEASEL_BIN="/mnt/c/Program\ Files/PuTTY/weasel-pageant"
 
 function start_agent {
     echo "Initialising new SSH agent..."
@@ -16,6 +17,9 @@ if [ "${SSH_AUTH_SOCK}" ]; then
     fi
     export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock;
     echo "Using forwarded SSH agent"
+elif [ -x "${WEASEL_BIN}" ]; then
+    echo "Connecting to pageant SSH agent via weasel..."
+	eval $(${WEASEL_BIN} -r -a "/tmp/.weasel-pageant-${USER}")
 elif [ -f "${SSH_ENV}" ]; then
     # Source SSH settings, if applicable
     . "${SSH_ENV}" > /dev/null
