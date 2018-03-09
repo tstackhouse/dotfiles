@@ -46,7 +46,7 @@ packages=(
   ansible
   build-essential
   cowsay
-  emacs
+  emacs-nox
   git-core
   google-chrome-stable
   htop

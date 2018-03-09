@@ -8,7 +8,7 @@ sudo apt -qq update
 # Install APT packages.
 packages=(
   build-essential
-  emacs
+  emacs-nox
   git-core
   tmux
   tree
