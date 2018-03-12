@@ -15,4 +15,4 @@
 (defvaralias 'c-basic-offset 'tab-width)	; ensure consistency
 (defvaralias 'cperl-indent-level 'tab-width)	; ensure consistency 
 (setq vc-follow-symlinks nil)			; warn (but don't prompt) when opening files linked from VCS controllerd paths
-(smart-tabs-insinuate 'javascript)		; use smart tabs
+;(smart-tabs-insinuate 'javascript)		; use smart tabs

@@ -11,28 +11,8 @@ function start_agent {
     /usr/bin/ssh-add;
 }
 
-function start_weasel {
-    echo "Connecting to pageant SSH agent via weasel..."
-	${WEASEL_BIN} -r -a "/tmp/.weasel-pageant-${USER}" | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-}
-
 if [ -x "${WEASEL_BIN}" ]; then
-	if [ -f "${SSH_ENV}" ]; then
-		# Source SSH settings, if applicable
-		. "${SSH_ENV}" > /dev/null
-		#ps ${SSH_PAGEANT_PID} doesn't work under cywgin
-		(ps -ef | grep ${SSH_PAGEANT_PID} | grep weasel-pageant) >&| /dev/null || {
-		start_weasel;
-    }
-	else 
-		#ps ${SSH_PAGEANT_PID} doesn't work under cywgin
-		(ps -ef | grep ${SSH_PAGEANT_PID} | grep weasel-pageant) >&| /dev/null || {
-		start_weasel;
-		}
-	fi
+    eval $(${WEASEL_BIN} -r -a "/tmp/.weasel-pageant-${USER}")
 elif [ "${SSH_AUTH_SOCK}" ]; then
     if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
         ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock;
