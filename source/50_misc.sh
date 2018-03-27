@@ -13,3 +13,7 @@ if command -v beet >/dev/null 2>&1; then
     _filedir() { :; }
     eval "$(beet completion)"
 fi
+
+if is_wsl; then
+    export CHROME_BIN=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
+fi
