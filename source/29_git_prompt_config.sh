@@ -1,3 +1,5 @@
+GIT_PROMPT_EXECUTABLE="haskell"
+
 source $DOTFILES/vendor/zsh-git-prompt/zshrc.sh
 
 ZSH_THEME_GIT_PROMPT_PREFIX="("

@@ -11,6 +11,12 @@
 # force explicit remote declaration
 [push]
   default = nothing
+[pull]
+  rebase = true
+[merge]
+  # Include summaries of merged commits in newly created merge commit messages
+  log = true
+  ff = no
 [apply]
   whitespace = fix
 [alias]
@@ -32,9 +38,6 @@
   added = yellow
   changed = green
   untracked = cyan
-[merge]
-  # Include summaries of merged commits in newly created merge commit messages
-  log = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -60,10 +63,3 @@
 	prune = true
 [diff]
 	algorithm = patience
-[user]
-	name = Tim Stackhouse
-	email = tstackhouse@radius180.com
-[merge]
-	ff = no
-[branch]
-	autoSetupRebase = always
