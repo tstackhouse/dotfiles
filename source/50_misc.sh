@@ -16,4 +16,6 @@ fi
 
 if is_wsl; then
     export CHROME_BIN=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
+    export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
+    export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 fi
