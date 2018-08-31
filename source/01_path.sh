@@ -24,6 +24,12 @@ if [[ -a "/usr/libexec/java_home" ]] ; then
     export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
+# add n bin, if set
+if [ -d "$HOME/.n" ] ; then
+    export N_PREFIX="$HOME/.n";
+    PATH="$N_PREFIX/bin:$PATH"
+fi
+
 # add yarn bin, if set
 if [ -d "$HOME/.yarn/bin" ] ; then
     PATH="$HOME/.yarn/bin:$PATH"
