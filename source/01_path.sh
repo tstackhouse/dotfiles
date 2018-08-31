@@ -24,6 +24,11 @@ if [[ -a "/usr/libexec/java_home" ]] ; then
     export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
+# add yarn bin, if set
+if [ -d "$HOME/.yarn/bin" ] ; then
+    PATH="$HOME/.yarn/bin:$PATH"
+fi
+
 # add tmuxifier
 export PATH="$DOTFILES/vendor/tmuxifier/bin:$PATH"
 
@@ -35,3 +40,4 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
