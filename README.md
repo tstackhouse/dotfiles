@@ -50,7 +50,7 @@ I switched over to this configuration management setup after finally getting fed
 
 ### All 3
 
-* Node.js and npm using nvm via the [init/50_node.sh](init/50_node.sh) script
+* Node.js and npm using n via the [init/50_node.sh](init/50_node.sh) script
 
 ## Installation
 

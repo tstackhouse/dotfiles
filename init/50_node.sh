@@ -1,3 +1,2 @@
-# download and install latest nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-
+# download and install latest n
+curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
