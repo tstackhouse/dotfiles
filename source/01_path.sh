@@ -35,6 +35,13 @@ if [ -d "$HOME/.yarn/bin" ] ; then
     PATH="$HOME/.yarn/bin:$PATH"
 fi
 
+# add go, if set
+if [ -d "$HOME/.go" ] ; then
+    export GOROOT="$HOME/.go"
+    export GOPATH="$HOME/.local/go"
+    PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
+fi
+
 # add tmuxifier
 export PATH="$DOTFILES/vendor/tmuxifier/bin:$PATH"
 
