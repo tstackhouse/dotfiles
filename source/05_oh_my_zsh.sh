@@ -52,6 +52,16 @@ plugins=(git git-extras git-flow-avh git-remote-branch sublime)
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# If we're on WSL and dotfiles are stored on a non-lxfs filesystem (i.e. on the
+# windows side), instruct oh-my-zsh to ignore permissions on completion scripts
+if is_wsl; then
+  fstype="$(df -P -T $DOTFILES | sed 1d | awk '{print $2}')"
+
+  if [[ fstype != 'lxfs' ]]; then
+    export ZSH_DISABLE_COMPFIX=true
+  fi
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
