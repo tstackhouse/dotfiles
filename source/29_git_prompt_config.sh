@@ -1,7 +1,11 @@
-GIT_PROMPT_EXECUTABLE="haskell"
+# Use the faster haskell executable if it's present
+if [[ -x "$DOTFILES/vendor/zsh-git-prompt/src/.bin/gitstatus" ]]; then
+  GIT_PROMPT_EXECUTABLE="haskell"
+fi
 
 source $DOTFILES/vendor/zsh-git-prompt/zshrc.sh
 
+ZSH_THEME_GIT_PROMPT_CACHE=1
 ZSH_THEME_GIT_PROMPT_PREFIX="("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")"
 ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
