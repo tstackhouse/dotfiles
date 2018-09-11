@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+echo -n "Comparing $1 to $2: "
+if [ ! -e "$1" ] || [ ! -e "$2" ]
+then
+ echo File Missing
+ exit 1;
+fi
+
+if [ $(md5sum "$1") = $(md5sum "$2") ]
+then
+ echo Files Match
+ exit 0;
+else
+ echo Files Different
+ exit 1;
+fi
