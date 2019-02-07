@@ -30,3 +30,5 @@ src
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f ~/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . ~/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+
+export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
