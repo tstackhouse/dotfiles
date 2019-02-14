@@ -1,65 +1,63 @@
 [include]
-  path = ~/.gitconfig.identity
+        path = ~/.gitconfig.identity
 [core]
-  autocrlf = input
-  whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-  # Use custom `.gitignore` and `.gitattributes`
+        # Always work with lf line endings
+        autocrlf = input
+        whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+        # Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore_global
-  attributesfile = ~/.gitattributes
-  filemode = false
+        attributesfile = ~/.gitattributes
+        filemode = false
 
-# force explicit remote declaration
 [push]
-  default = nothing
+        # force explicit remote declaration (must use `git push origin master` etc)
+        default = nothing
 [pull]
-  rebase = true
+        # Always rebase when pulling. Prevents "merge remote tracking branch" merge commits on pull, keeps history clean
+        rebase = true
+[fetch]
+        # Auto prune local tracking branches that are deleted upstream. Keeps things tity
+        prune = true
+[diff]
+        # Use patience diff instead of myers, produces more sane diffs especially with larger changesets
+        algorithm = patience
 [merge]
-  # Include summaries of merged commits in newly created merge commit messages
-  log = true
-  ff = no
+        # Include summaries of merged commits in newly created merge commit messages
+        log = true
+        # Never Perform fast forward merges by default (must use --ff to force)
+        ff = no
 [apply]
-  whitespace = fix
-[alias]
-[branch "master"]
-  remote = origin
-  merge = refs/heads/master
+        whitespace = fix
+
+# Colors
 [color]
-  ui = auto
+        ui = auto
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+        current = yellow reverse
+        local = yellow
+        remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-	trustExitCode = true
+        added = yellow
+        changed = green
+        untracked = cyan
+
 # URL Shortcuts
 [url "git@github.com:"]
-  insteadOf = "gh:"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
+        insteadOf = "gh:"
+        pushInsteadOf = "github:"
+        pushInsteadOf = "git://github.com/"
 [url "git://github.com/"]
-  insteadOf = "github:"
+        insteadOf = "github:"
 [url "git@gist.github.com:"]
-  insteadOf = "gst:"
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
+        insteadOf = "gst:"
+        pushInsteadOf = "gist:"
+        pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
-  insteadOf = "gist:"
+        insteadOf = "gist:"
 [url "git@heroku.com:"]
-  insteadOf = "heroku:"
-[fetch]
-	prune = true
-[diff]
-	algorithm = patience
+        insteadOf = "heroku:"
