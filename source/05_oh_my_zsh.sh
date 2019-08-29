@@ -49,7 +49,8 @@ plugins=(git git-extras git-flow-avh git-remote-branch sublime)
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # If we're on WSL and dotfiles are stored on a non-lxfs filesystem (i.e. on the
