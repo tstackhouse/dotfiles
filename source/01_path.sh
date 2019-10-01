@@ -15,7 +15,7 @@ fi
 
 # add rubygems to path, if present
 if hash ruby 2> /dev/null && hash gem 2> /dev/null; then
-    RUBYGEMS_PREFIX=$(ruby -rubygems -e 'puts Gem.user_dir')
+    RUBYGEMS_PREFIX=$(ruby -rrubygems -e 'puts Gem.user_dir')
     [[ :$PATH: == *":$RUBYGEMS_PREFIX/bin:"* ]] || PATH="$RUBYGEMS_PREFIX/bin:$PATH"
 fi
 
