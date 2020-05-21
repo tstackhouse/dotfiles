@@ -3,6 +3,7 @@ if [[ -x "$DOTFILES/vendor/zsh-git-prompt/src/.bin/gitstatus" ]]; then
   GIT_PROMPT_EXECUTABLE="haskell"
 fi
 
+source $DOTFILES/vendor/git-extras/etc/git-extras-completion.zsh
 source $DOTFILES/vendor/zsh-git-prompt/zshrc.sh
 
 ZSH_THEME_GIT_PROMPT_CACHE=1
