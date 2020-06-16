@@ -6,6 +6,7 @@ fi
 source $DOTFILES/vendor/git-extras/etc/git-extras-completion.zsh
 source $DOTFILES/vendor/zsh-git-prompt/zshrc.sh
 
+ZSH_GIT_PROMPT_SHOW_UPSTREAM=2
 ZSH_THEME_GIT_PROMPT_CACHE=1
 ZSH_THEME_GIT_PROMPT_PREFIX="("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")"
