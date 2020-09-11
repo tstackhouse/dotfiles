@@ -62,3 +62,6 @@
         insteadOf = "gist:"
 [url "git@heroku.com:"]
         insteadOf = "heroku:"
+
+[alias]
+        co = checkout
